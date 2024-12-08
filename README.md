@@ -36,3 +36,76 @@ CREATE TABLE bill (
     amount DOUBLE,
     status VARCHAR(20)
 );
+
+Then, create the necessary table to store bills:
+
+sql
+Copy code
+CREATE TABLE bill (
+    bill_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    customer_address VARCHAR(255),
+    units INT,
+    amount DOUBLE,
+    status VARCHAR(20)
+);
+3. Clone the Repository
+Clone this repository to your local machine:
+
+bash
+Copy code
+git clone https://github.com/your-username/electricity-billing-system.git
+4. Configure Database Connection
+In the DBConnection.java file, update the database connection details (username, password, and database name) according to your MySQL setup.
+
+java
+Copy code
+String url = "jdbc:mysql://localhost:3306/ElectricityBillingDB";
+String username = "root";  // Use your MySQL username
+String password = "password";  // Use your MySQL password
+5. Compile and Run the Project
+Compile the Java files:
+bash
+Copy code
+javac -cp ".;lib/mysql-connector-j-9.1.0.jar" src/*.java
+Run the Project:
+bash
+Copy code
+java -cp ".;lib/mysql-connector-j-9.1.0.jar" Main
+Commands
+To Start the Application: Run the project with the command:
+bash
+Copy code
+java -cp ".;lib/mysql-connector-j-9.1.0.jar" Main
+To View All Bills: Select option 2 within the application to view all bills.
+To Add a New Bill: Select option 1 and enter the required details.
+To Pay a Bill: Select option 3, enter the bill ID, and confirm payment.
+How It Works
+Admin Login
+The admin logs in using a valid username and password.
+If credentials are correct, the admin gains access to the system.
+Adding a Bill
+The admin enters the customer's name, address, and electricity units consumed.
+The system calculates the amount based on a fixed rate (e.g., 5.0 per unit).
+The bill is stored in the database with a "UNPAID" status.
+Viewing Bills
+The admin can view all existing bills with customer information and bill status.
+Paying a Bill
+Admin selects a bill by its ID and marks it as "PAID".
+The system updates the bill's status in the database.
+Project Structure
+css
+Copy code
+ElectricityBillingSystem/
+├── lib/
+│   └── mysql-connector-j-9.1.0.jar
+├── src/
+│   ├── Main.java
+│   ├── model/
+│   │   └── Bill.java
+│   ├── service/
+│   │   ├── AdminService.java
+│   │   └── BillingService.java
+│   └── db/
+│       └── DBConnection.java
+└── README.md
