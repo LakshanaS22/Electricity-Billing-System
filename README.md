@@ -4,22 +4,6 @@
 
 The **Electricity Billing System** is a console-based application designed to automate the management of electricity billing for customers. This system enables admins to add new bills, view existing bills, and mark bills as paid. The system integrates with a MySQL database to store and manage customer data and billing records.
 
-## Project Structure
-
-ElectricityBillingSystem/
-├── lib/
-│   └── mysql-connector-j-9.1.0.jar
-├── src/
-│   ├── Main.java
-│   ├── model/
-│   │   └── Bill.java
-│   ├── service/
-│   │   ├── AdminService.java
-│   │   └── BillingService.java
-│   └── db/
-│       └── DBConnection.java
-└── README.md
-
 ## Features
 
 - **Admin Login**: Secure login for admin access.
